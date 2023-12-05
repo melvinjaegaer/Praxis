@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 public class PraxisGui {
     Patient erster;
+    Stack<Patient>  rechnung;
     Queue<Patient> schlange;
     Queue<Patient> schlangeA;
 
@@ -22,11 +23,17 @@ public class PraxisGui {
     private JCheckBox artztbox;
     private JTextField blutT;
     private JLabel blutL;
+    private JTextField textR;
+    private JLabel stapelL;
+    private JCheckBox checkBox1;
+    private JCheckBox checkBox2;
+    private JButton buttonR;
 
     public PraxisGui() {
 
         schlange = new Queue<Patient>() {
         };
+        rechnung =new Stack<Patient>(){};
         aufnehmen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,10 +60,25 @@ public class PraxisGui {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                textR.setText();
+
                 namenfeld.setText("");
                 nachnamenfeld.setText("");
 
 
+                rechnung.push(Patient);
+                rechnung.top(Patient);
+
+
+
+            }
+
+
+        });
+        buttonR.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                rechnung.pop(Patient);
             }
         });
     }
